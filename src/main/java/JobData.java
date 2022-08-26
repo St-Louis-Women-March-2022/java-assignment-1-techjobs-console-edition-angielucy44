@@ -94,24 +94,32 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
-        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+        value = value.toUpperCase();
         for (HashMap<String, String> row : allJobs){
 
             for (Map.Entry<String, String> column : row.entrySet()) {
 
-                String a = column.getKey();
-                String b = column.getKey();
+                System.out.println(column);
+//                System.out.println(column.getValue());
+//
+//                System.out.println(value);
+//                System.out.println("/n");
+
+                String a = column.getValue().toUpperCase();
+                String b = column.getValue().toUpperCase();
 
 //                String a = a.toUpperCase();
 //                String b = b.toUpperCase();
 
                 if(a.contains(value) || b.contains(value)){
                     jobs.add(row);
+                    break;
                 }
             }
         }
-
+//b.contains(value)
         // TODO - implement this method
         return jobs;
     }
