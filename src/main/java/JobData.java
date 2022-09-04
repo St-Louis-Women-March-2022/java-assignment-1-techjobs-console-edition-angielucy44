@@ -103,19 +103,15 @@ public class JobData {
 
             for (Map.Entry<String, String> column : row.entrySet()) {
 
-                System.out.println(column);
+//                System.out.println(column);
 //                System.out.println(column.getValue());
-//
 //                System.out.println(value);
 //                System.out.println("/n");
-
-
                 String a = column.getValue().toLowerCase();
-                String b = column.getValue().toLowerCase();
 
+                value = value.toLowerCase();
 
-
-                if (a.contains(value) || b.contains(value)) {
+                if (a.contains(value)){
                     jobs.add(row);
                     break;
                 }
